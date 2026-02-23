@@ -5,6 +5,7 @@ import { Minus, Plus, X } from "lucide-react"
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetFooter,
@@ -24,6 +25,9 @@ export function CartDrawer() {
           <SheetTitle className="font-serif text-xl text-[#1C1917] tracking-wide">
             Votre Panier
           </SheetTitle>
+          <SheetDescription className="sr-only">
+            Contenu de votre panier
+          </SheetDescription>
         </SheetHeader>
 
         {items.length === 0 ? (

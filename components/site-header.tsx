@@ -18,6 +18,7 @@ import {
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet"
@@ -208,6 +209,9 @@ export function SiteHeader() {
             <SheetTitle className="font-serif text-xl text-[#1C1917] tracking-[0.08em]">
               MAISON DAKAR
             </SheetTitle>
+            <SheetDescription className="sr-only">
+              Menu de navigation principal
+            </SheetDescription>
           </SheetHeader>
           <nav className="flex-1 py-8">
             <ul className="flex flex-col gap-1">
