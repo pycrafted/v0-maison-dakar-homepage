@@ -25,18 +25,25 @@ import {
 import { useCart } from "@/lib/cart-context"
 
 const NAV_LINKS = [
-  "Nouveautés",
-  "Prêt-à-Porter",
-  "Sur-Mesure",
-  "Accessoires",
-  "La Maison",
+  { label: "Nouveautés", href: "#" },
+  { label: "Prêt-à-Porter", href: "/pret-a-porter" },
+  { label: "Sur-Mesure", href: "#" },
+  { label: "Accessoires", href: "#" },
+  { label: "La Maison", href: "#" },
 ]
 
-export function SiteHeader() {
+interface SiteHeaderProps {
+  variant?: "hero" | "light"
+}
+
+export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { setIsOpen, totalItems } = useCart()
+
+  // On "light" variant, we always treat the header as if scrolled (dark text)
+  const isDark = variant === "light" || scrolled
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -48,7 +55,7 @@ export function SiteHeader() {
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          scrolled
+          isDark
             ? "bg-[#FDFBF7]/80 backdrop-blur-md border-b border-[#E7E5E4]"
             : "bg-transparent"
         }`}
@@ -57,14 +64,14 @@ export function SiteHeader() {
           {/* Top bar with currency/lang - desktop only */}
           <div
             className={`hidden lg:flex items-center justify-between py-2 text-xs tracking-widest uppercase transition-colors duration-500 ${
-              scrolled ? "text-[#78716C]" : "text-[#FDFBF7]/70"
+              isDark ? "text-[#78716C]" : "text-[#FDFBF7]/70"
             }`}
           >
             <div className="flex items-center gap-4">
               <Select defaultValue="eur">
                 <SelectTrigger
                   className={`h-auto border-none shadow-none bg-transparent p-0 text-xs tracking-widest uppercase ${
-                    scrolled ? "text-[#78716C]" : "text-[#FDFBF7]/70"
+                    isDark ? "text-[#78716C]" : "text-[#FDFBF7]/70"
                   } hover:opacity-100 w-auto gap-1.5`}
                 >
                   <SelectValue />
@@ -80,7 +87,7 @@ export function SiteHeader() {
               <Select defaultValue="fr">
                 <SelectTrigger
                   className={`h-auto border-none shadow-none bg-transparent p-0 text-xs tracking-widest uppercase ${
-                    scrolled ? "text-[#78716C]" : "text-[#FDFBF7]/70"
+                    isDark ? "text-[#78716C]" : "text-[#FDFBF7]/70"
                   } hover:opacity-100 w-auto gap-1.5`}
                 >
                   <SelectValue />
@@ -93,16 +100,16 @@ export function SiteHeader() {
             </div>
             <div
               className={`flex items-center gap-6 transition-colors duration-500 ${
-                scrolled ? "text-[#78716C]" : "text-[#FDFBF7]/70"
+                isDark ? "text-[#78716C]" : "text-[#FDFBF7]/70"
               }`}
             >
               {NAV_LINKS.map((link) => (
                 <a
-                  key={link}
-                  href="#"
+                  key={link.label}
+                  href={link.href}
                   className="hover:opacity-100 transition-opacity text-[11px] tracking-[0.2em]"
                 >
-                  {link}
+                  {link.label}
                 </a>
               ))}
             </div>
@@ -114,7 +121,7 @@ export function SiteHeader() {
             <div className="flex items-center gap-3 lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className={`transition-colors ${scrolled ? "text-[#1C1917]" : "text-[#FDFBF7]"}`}
+                className={`transition-colors ${isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"}`}
                 aria-label="Ouvrir le menu"
               >
                 <Menu className="size-5" strokeWidth={1.5} />
@@ -128,7 +135,7 @@ export function SiteHeader() {
             <a href="#" className="flex items-center">
               <h1
                 className={`font-serif text-2xl md:text-3xl font-bold tracking-[0.08em] transition-colors duration-500 ${
-                  scrolled ? "text-[#1C1917]" : "text-[#FDFBF7]"
+                  isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"
                 }`}
               >
                 MAISON DAKAR
@@ -139,14 +146,14 @@ export function SiteHeader() {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSearchOpen(true)}
-                className={`transition-colors ${scrolled ? "text-[#1C1917]" : "text-[#FDFBF7]"}`}
+                className={`transition-colors ${isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"}`}
                 aria-label="Rechercher"
               >
                 <Search className="size-5" strokeWidth={1.5} />
               </button>
               <button
                 className={`hidden md:block transition-colors ${
-                  scrolled ? "text-[#1C1917]" : "text-[#FDFBF7]"
+                  isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"
                 }`}
                 aria-label="Mon compte"
               >
@@ -155,7 +162,7 @@ export function SiteHeader() {
               <button
                 onClick={() => setIsOpen(true)}
                 className={`relative transition-colors ${
-                  scrolled ? "text-[#1C1917]" : "text-[#FDFBF7]"
+                  isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"
                 }`}
                 aria-label="Panier"
               >
@@ -216,12 +223,12 @@ export function SiteHeader() {
           <nav className="flex-1 py-8">
             <ul className="flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
-                <li key={link}>
+                <li key={link.label}>
                   <a
-                    href="#"
+                    href={link.href}
                     className="block py-3 text-sm uppercase tracking-widest text-[#1C1917] hover:text-[#8B4513] transition-colors"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
