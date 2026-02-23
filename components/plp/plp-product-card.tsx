@@ -37,6 +37,7 @@ export function PLPProductCard({ product, index }: PLPProductCardProps) {
           src={product.imageA}
           alt={product.name}
           fill
+          priority={index < 3}
           className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
