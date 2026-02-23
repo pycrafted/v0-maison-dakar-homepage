@@ -29,7 +29,7 @@ const NAV_LINKS = [
   { label: "Prêt-à-Porter", href: "/pret-a-porter" },
   { label: "Sur-Mesure", href: "/sur-mesure" },
   { label: "Accessoires", href: "#" },
-  { label: "La Maison", href: "#" },
+  { label: "La Maison", href: "/la-maison" },
 ]
 
 interface SiteHeaderProps {
