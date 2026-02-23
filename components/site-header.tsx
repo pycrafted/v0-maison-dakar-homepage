@@ -27,7 +27,7 @@ import { useCart } from "@/lib/cart-context"
 const NAV_LINKS = [
   { label: "Nouveautés", href: "#" },
   { label: "Prêt-à-Porter", href: "/pret-a-porter" },
-  { label: "Sur-Mesure", href: "#" },
+  { label: "Sur-Mesure", href: "/sur-mesure" },
   { label: "Accessoires", href: "#" },
   { label: "La Maison", href: "#" },
 ]
