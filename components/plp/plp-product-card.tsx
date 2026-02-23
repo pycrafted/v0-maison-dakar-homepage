@@ -16,7 +16,7 @@ export function PLPProductCard({ product, index }: PLPProductCardProps) {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 24 }}
+      initial={index < 3 ? false : { opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.06 * index, ease: "easeOut" }}
       className="group cursor-pointer"
