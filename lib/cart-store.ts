@@ -10,6 +10,7 @@ export interface CartItem {
   priceCFA: number
   image: string
   quantity: number
+  size?: string
 }
 
 export const DEMO_CART_ITEMS: CartItem[] = [
@@ -20,6 +21,7 @@ export const DEMO_CART_ITEMS: CartItem[] = [
     priceCFA: 120000,
     image: "/images/product-1a.jpg",
     quantity: 1,
+    size: "M",
   },
   {
     id: 2,
@@ -28,5 +30,6 @@ export const DEMO_CART_ITEMS: CartItem[] = [
     priceCFA: 160000,
     image: "/images/product-2a.jpg",
     quantity: 1,
+    size: "L",
   },
 ]

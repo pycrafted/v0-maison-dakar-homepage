@@ -106,9 +106,12 @@ export function CartDrawer() {
                 </p>
               </div>
             </div>
-            <button className="w-full bg-[#D4AF37] text-[#0A0A0A] py-4 text-sm font-sans uppercase tracking-widest font-medium hover:bg-[#C2662D] hover:text-[#F5F0EB] transition-colors duration-300 rounded-sm">
-              {"Proceder au paiement"}
-            </button>
+            <a
+              href="/checkout"
+              className="w-full bg-[#D4AF37] text-[#0A0A0A] py-4 text-sm font-sans uppercase tracking-widest font-medium hover:bg-[#C2662D] hover:text-[#F5F0EB] transition-colors duration-300 rounded-sm block text-center"
+            >
+              Proceder au paiement
+            </a>
           </SheetFooter>
         )}
       </SheetContent>
