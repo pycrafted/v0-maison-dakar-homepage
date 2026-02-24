@@ -25,6 +25,7 @@ import {
 import { useCart } from "@/lib/cart-context"
 
 const NAV_LINKS = [
+  { label: "Collections", href: "/collections" },
   { label: "Boubous", href: "/pret-a-porter" },
   { label: "Chaussures", href: "#" },
   { label: "Sacs", href: "#" },
