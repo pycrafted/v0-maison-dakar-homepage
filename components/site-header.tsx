@@ -13,6 +13,7 @@ import {
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog"
 import {
@@ -182,6 +183,9 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
           showCloseButton={false}
         >
           <DialogTitle className="sr-only">Rechercher</DialogTitle>
+          <DialogDescription className="sr-only">
+            Rechercher des produits sur Golden Pousso
+          </DialogDescription>
           <button
             onClick={() => setSearchOpen(false)}
             className="absolute top-6 right-6 text-[#F5F0EB] hover:text-[#D4AF37] transition-colors"
