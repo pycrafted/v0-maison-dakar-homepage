@@ -31,7 +31,7 @@ export function Testimonial() {
           transition={{ duration: 0.9, delay: 0.2 }}
         >
           <p className="font-serif text-xl md:text-2xl lg:text-3xl italic text-[#1C1917] leading-relaxed tracking-tight text-balance">
-            {"La Maison Dakar a su traduire mon ame dans une robe. Le tombe du bazin et la precision des broderies sont incomparables."}
+            {"Golden Pousso a su traduire mon ame dans une robe. Le tombe du bazin et la precision des broderies sont incomparables."}
           </p>
         </motion.blockquote>
 

@@ -25,10 +25,11 @@ import {
 import { useCart } from "@/lib/cart-context"
 
 const NAV_LINKS = [
-  { label: "Nouveautés", href: "#" },
-  { label: "Prêt-à-Porter", href: "/pret-a-porter" },
+  { label: "Boubous", href: "/pret-a-porter" },
+  { label: "Chaussures", href: "#" },
+  { label: "Sacs", href: "#" },
+  { label: "Bijoux", href: "#" },
   { label: "Sur-Mesure", href: "/sur-mesure" },
-  { label: "Accessoires", href: "#" },
   { label: "La Maison", href: "/la-maison" },
 ]
 
@@ -42,7 +43,6 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { setIsOpen, totalItems } = useCart()
 
-  // On "light" variant, we always treat the header as if scrolled (dark text)
   const isDark = variant === "light" || scrolled
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isDark
-            ? "bg-[#FDFBF7]/80 backdrop-blur-md border-b border-[#E7E5E4]"
+            ? "bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#2A2A2A]"
             : "bg-transparent"
         }`}
       >
@@ -64,35 +64,35 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
           {/* Top bar with currency/lang - desktop only */}
           <div
             className={`hidden lg:flex items-center justify-between py-2 text-xs tracking-widest uppercase transition-colors duration-500 ${
-              isDark ? "text-[#78716C]" : "text-[#FDFBF7]/70"
+              isDark ? "text-[#8A8A8A]" : "text-[#F5F0EB]/60"
             }`}
           >
             <div className="flex items-center gap-4">
               <Select defaultValue="eur">
                 <SelectTrigger
                   className={`h-auto border-none shadow-none bg-transparent p-0 text-xs tracking-widest uppercase ${
-                    isDark ? "text-[#78716C]" : "text-[#FDFBF7]/70"
+                    isDark ? "text-[#8A8A8A]" : "text-[#F5F0EB]/60"
                   } hover:opacity-100 w-auto gap-1.5`}
                 >
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-[#FDFBF7] border-[#E7E5E4] rounded-sm">
+                <SelectContent className="bg-[#141414] border-[#2A2A2A] rounded-sm text-[#F5F0EB]">
                   <SelectItem value="xof" className="text-xs">XOF (FCFA)</SelectItem>
-                  <SelectItem value="eur" className="text-xs">EUR (€)</SelectItem>
+                  <SelectItem value="eur" className="text-xs">EUR</SelectItem>
                   <SelectItem value="usd" className="text-xs">USD ($)</SelectItem>
-                  <SelectItem value="gbp" className="text-xs">GBP (£)</SelectItem>
+                  <SelectItem value="gbp" className="text-xs">GBP</SelectItem>
                 </SelectContent>
               </Select>
               <span className="opacity-30">|</span>
               <Select defaultValue="fr">
                 <SelectTrigger
                   className={`h-auto border-none shadow-none bg-transparent p-0 text-xs tracking-widest uppercase ${
-                    isDark ? "text-[#78716C]" : "text-[#FDFBF7]/70"
+                    isDark ? "text-[#8A8A8A]" : "text-[#F5F0EB]/60"
                   } hover:opacity-100 w-auto gap-1.5`}
                 >
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-[#FDFBF7] border-[#E7E5E4] rounded-sm">
+                <SelectContent className="bg-[#141414] border-[#2A2A2A] rounded-sm text-[#F5F0EB]">
                   <SelectItem value="fr" className="text-xs">FR</SelectItem>
                   <SelectItem value="en" className="text-xs">EN</SelectItem>
                 </SelectContent>
@@ -100,14 +100,14 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
             </div>
             <div
               className={`flex items-center gap-6 transition-colors duration-500 ${
-                isDark ? "text-[#78716C]" : "text-[#FDFBF7]/70"
+                isDark ? "text-[#8A8A8A]" : "text-[#F5F0EB]/60"
               }`}
             >
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="hover:opacity-100 transition-opacity text-[11px] tracking-[0.2em]"
+                  className="hover:text-[#D4AF37] transition-colors text-[11px] tracking-[0.2em]"
                 >
                   {link.label}
                 </a>
@@ -121,7 +121,7 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
             <div className="flex items-center gap-3 lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className={`transition-colors ${isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"}`}
+                className={`transition-colors ${isDark ? "text-[#F5F0EB]" : "text-[#F5F0EB]"}`}
                 aria-label="Ouvrir le menu"
               >
                 <Menu className="size-5" strokeWidth={1.5} />
@@ -132,13 +132,13 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
             <div className="hidden lg:block w-24" />
 
             {/* Center: Logo */}
-            <a href="#" className="flex items-center">
+            <a href="/" className="flex items-center">
               <h1
-                className={`font-serif text-2xl md:text-3xl font-bold tracking-[0.08em] transition-colors duration-500 ${
-                  isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"
+                className={`font-serif text-xl md:text-2xl font-bold tracking-[0.06em] transition-colors duration-500 ${
+                  isDark ? "text-[#D4AF37]" : "text-[#D4AF37]"
                 }`}
               >
-                MAISON DAKAR
+                GOLDEN POUSSO
               </h1>
             </a>
 
@@ -146,29 +146,25 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSearchOpen(true)}
-                className={`transition-colors ${isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"}`}
+                className="text-[#F5F0EB] hover:text-[#D4AF37] transition-colors"
                 aria-label="Rechercher"
               >
                 <Search className="size-5" strokeWidth={1.5} />
               </button>
               <button
-                className={`hidden md:block transition-colors ${
-                  isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"
-                }`}
+                className="hidden md:block text-[#F5F0EB] hover:text-[#D4AF37] transition-colors"
                 aria-label="Mon compte"
               >
                 <User className="size-5" strokeWidth={1.5} />
               </button>
               <button
                 onClick={() => setIsOpen(true)}
-                className={`relative transition-colors ${
-                  isDark ? "text-[#1C1917]" : "text-[#FDFBF7]"
-                }`}
+                className="relative text-[#F5F0EB] hover:text-[#D4AF37] transition-colors"
                 aria-label="Panier"
               >
                 <ShoppingBag className="size-5" strokeWidth={1.5} />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 size-4 rounded-full bg-[#8B4513] text-[#FDFBF7] text-[10px] flex items-center justify-center font-medium">
+                  <span className="absolute -top-1.5 -right-1.5 size-4 rounded-full bg-[#D4AF37] text-[#0A0A0A] text-[10px] flex items-center justify-center font-bold">
                     {totalItems}
                   </span>
                 )}
@@ -178,32 +174,32 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
         </div>
       </motion.header>
 
-      {/* Search Dialog - Full Screen */}
+      {/* Search Dialog */}
       <Dialog open={searchOpen} onOpenChange={setSearchOpen}>
         <DialogContent
-          className="max-w-full h-full sm:max-w-full bg-[#FDFBF7] border-none rounded-none flex flex-col items-center justify-center"
+          className="max-w-full h-full sm:max-w-full bg-[#0A0A0A] border-none rounded-none flex flex-col items-center justify-center"
           showCloseButton={false}
         >
           <DialogTitle className="sr-only">Rechercher</DialogTitle>
           <button
             onClick={() => setSearchOpen(false)}
-            className="absolute top-6 right-6 text-[#1C1917] hover:text-[#8B4513] transition-colors"
+            className="absolute top-6 right-6 text-[#F5F0EB] hover:text-[#D4AF37] transition-colors"
             aria-label="Fermer la recherche"
           >
             <X className="size-6" strokeWidth={1.5} />
           </button>
           <div className="w-full max-w-xl px-4">
-            <p className="text-xs uppercase tracking-widest text-[#78716C] mb-6 text-center">
+            <p className="text-xs uppercase tracking-widest text-[#D4AF37] mb-6 text-center">
               Rechercher
             </p>
             <div className="relative">
               <input
                 type="text"
                 placeholder="Que cherchez-vous ?"
-                className="w-full bg-transparent border-b border-[#1C1917] pb-3 text-2xl md:text-4xl font-serif text-[#1C1917] placeholder:text-[#78716C]/50 focus:outline-none"
+                className="w-full bg-transparent border-b border-[#D4AF37]/40 pb-3 text-2xl md:text-4xl font-serif text-[#F5F0EB] placeholder:text-[#8A8A8A]/50 focus:outline-none focus:border-[#D4AF37]"
                 autoFocus
               />
-              <Search className="absolute right-0 bottom-3 size-6 text-[#78716C]" strokeWidth={1.5} />
+              <Search className="absolute right-0 bottom-3 size-6 text-[#D4AF37]" strokeWidth={1.5} />
             </div>
           </div>
         </DialogContent>
@@ -211,10 +207,10 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
 
       {/* Mobile Menu */}
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-        <SheetContent side="left" className="w-80 bg-[#FDFBF7] border-r border-[#E7E5E4] flex flex-col">
-          <SheetHeader className="border-b border-[#E7E5E4] pb-6">
-            <SheetTitle className="font-serif text-xl text-[#1C1917] tracking-[0.08em]">
-              MAISON DAKAR
+        <SheetContent side="left" className="w-80 bg-[#0A0A0A] border-r border-[#2A2A2A] flex flex-col">
+          <SheetHeader className="border-b border-[#2A2A2A] pb-6">
+            <SheetTitle className="font-serif text-xl text-[#D4AF37] tracking-[0.06em]">
+              GOLDEN POUSSO
             </SheetTitle>
             <SheetDescription className="sr-only">
               Menu de navigation principal
@@ -226,7 +222,7 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="block py-3 text-sm uppercase tracking-widest text-[#1C1917] hover:text-[#8B4513] transition-colors"
+                    className="block py-3 text-sm uppercase tracking-widest text-[#F5F0EB]/80 hover:text-[#D4AF37] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -234,13 +230,13 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
               ))}
             </ul>
           </nav>
-          <div className="border-t border-[#E7E5E4] pt-6 pb-4">
+          <div className="border-t border-[#2A2A2A] pt-6 pb-4">
             <div className="flex items-center gap-3 mb-4">
               <Select defaultValue="eur">
-                <SelectTrigger className="h-auto border border-[#E7E5E4] bg-transparent text-xs tracking-widest uppercase text-[#78716C] rounded-sm px-3 py-2 w-auto gap-1.5">
+                <SelectTrigger className="h-auto border border-[#2A2A2A] bg-transparent text-xs tracking-widest uppercase text-[#8A8A8A] rounded-sm px-3 py-2 w-auto gap-1.5">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-[#FDFBF7] border-[#E7E5E4] rounded-sm">
+                <SelectContent className="bg-[#141414] border-[#2A2A2A] rounded-sm text-[#F5F0EB]">
                   <SelectItem value="xof" className="text-xs">XOF</SelectItem>
                   <SelectItem value="eur" className="text-xs">EUR</SelectItem>
                   <SelectItem value="usd" className="text-xs">USD</SelectItem>
@@ -248,19 +244,19 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
                 </SelectContent>
               </Select>
               <Select defaultValue="fr">
-                <SelectTrigger className="h-auto border border-[#E7E5E4] bg-transparent text-xs tracking-widest uppercase text-[#78716C] rounded-sm px-3 py-2 w-auto gap-1.5">
+                <SelectTrigger className="h-auto border border-[#2A2A2A] bg-transparent text-xs tracking-widest uppercase text-[#8A8A8A] rounded-sm px-3 py-2 w-auto gap-1.5">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-[#FDFBF7] border-[#E7E5E4] rounded-sm">
+                <SelectContent className="bg-[#141414] border-[#2A2A2A] rounded-sm text-[#F5F0EB]">
                   <SelectItem value="fr" className="text-xs">FR</SelectItem>
                   <SelectItem value="en" className="text-xs">EN</SelectItem>
                 </SelectContent>
               </Select>
             </div>
-            <div className="flex items-center gap-4 text-xs text-[#78716C] tracking-wider">
-              <a href="#" className="hover:text-[#1C1917] transition-colors">Instagram</a>
-              <a href="#" className="hover:text-[#1C1917] transition-colors">WhatsApp</a>
-              <a href="#" className="hover:text-[#1C1917] transition-colors">TikTok</a>
+            <div className="flex items-center gap-4 text-xs text-[#8A8A8A] tracking-wider">
+              <a href="#" className="hover:text-[#D4AF37] transition-colors">Instagram</a>
+              <a href="#" className="hover:text-[#D4AF37] transition-colors">WhatsApp</a>
+              <a href="#" className="hover:text-[#D4AF37] transition-colors">TikTok</a>
             </div>
           </div>
         </SheetContent>

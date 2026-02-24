@@ -11,7 +11,7 @@ const STEPS = [
     description:
       "En visio ou dans notre showroom a Dakar, notre creatrice prend le temps de comprendre vos envies, votre style et l'occasion. C'est le debut d'un dialogue intime entre votre vision et notre savoir-faire.",
     image: "/images/sur-mesure-consultation.jpg",
-    imageAlt: "Consultation privee dans l'atelier Maison Dakar",
+    imageAlt: "Consultation privee dans l'atelier Golden Pousso",
   },
   {
     number: "02",
@@ -33,7 +33,7 @@ const STEPS = [
     number: "04",
     title: "La Revelation",
     description:
-      "Le moment tant attendu. Votre creation unique vous est remise dans un ecrin signe Maison Dakar. Vous portez desormais une piece d'art, entierement pensee et realisee pour vous.",
+      "Le moment tant attendu. Votre creation unique vous est remise dans un ecrin signe Golden Pousso. Vous portez desormais une piece d'art, entierement pensee et realisee pour vous.",
     image: "/images/sur-mesure-revelation.jpg",
     imageAlt: "Revelation de la robe sur-mesure terminee",
   },

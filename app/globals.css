@@ -4,27 +4,27 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #FDFBF7;
-  --foreground: #1C1917;
-  --card: #FDFBF7;
-  --card-foreground: #1C1917;
-  --popover: #FDFBF7;
-  --popover-foreground: #1C1917;
-  --primary: #1C1917;
-  --primary-foreground: #FDFBF7;
-  --secondary: #F5F0EB;
-  --secondary-foreground: #1C1917;
-  --muted: #F5F0EB;
-  --muted-foreground: #78716C;
-  --accent: #8B4513;
-  --accent-foreground: #FDFBF7;
+  --background: #0A0A0A;
+  --foreground: #F5F0EB;
+  --card: #141414;
+  --card-foreground: #F5F0EB;
+  --popover: #141414;
+  --popover-foreground: #F5F0EB;
+  --primary: #D4AF37;
+  --primary-foreground: #0A0A0A;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #F5F0EB;
+  --muted: #1A1A1A;
+  --muted-foreground: #8A8A8A;
+  --accent: #C2662D;
+  --accent-foreground: #F5F0EB;
   --destructive: #B91C1C;
-  --destructive-foreground: #FDFBF7;
-  --border: #E7E5E4;
-  --input: #E7E5E4;
-  --ring: #8B4513;
+  --destructive-foreground: #F5F0EB;
+  --border: #2A2A2A;
+  --input: #2A2A2A;
+  --ring: #D4AF37;
   --gold: #D4AF37;
-  --terracotta: #8B4513;
+  --terracotta: #C2662D;
   --radius: 0.125rem;
 }
 

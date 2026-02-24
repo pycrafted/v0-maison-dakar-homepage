@@ -46,17 +46,17 @@ export function FilterSheet({
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent
         side="left"
-        className="w-[340px] sm:w-[380px] bg-[#FDFBF7] border-r border-[#E7E5E4] flex flex-col"
+        className="w-[340px] sm:w-[380px] bg-[#0A0A0A] border-r border-[#2A2A2A] flex flex-col"
       >
-        <SheetHeader className="border-b border-[#E7E5E4] pb-5">
+        <SheetHeader className="border-b border-[#2A2A2A] pb-5">
           <div className="flex items-center justify-between">
-            <SheetTitle className="font-serif text-xl text-[#1C1917] tracking-wide">
+            <SheetTitle className="font-serif text-xl text-[#D4AF37] tracking-wide">
               Filtrer
             </SheetTitle>
             {activeFilterCount > 0 && (
               <button
                 onClick={onClearAll}
-                className="text-xs font-sans uppercase tracking-widest text-[#8B4513] hover:text-[#1C1917] transition-colors"
+                className="text-xs font-sans uppercase tracking-widest text-[#C2662D] hover:text-[#F5F0EB] transition-colors"
               >
                 Tout effacer ({activeFilterCount})
               </button>
@@ -69,9 +69,8 @@ export function FilterSheet({
 
         <div className="flex-1 overflow-y-auto py-2">
           <Accordion type="multiple" defaultValue={["matieres", "tailles", "couleurs"]}>
-            {/* Matieres */}
-            <AccordionItem value="matieres" className="border-b border-[#E7E5E4]">
-              <AccordionTrigger className="text-xs font-sans uppercase tracking-widest text-[#1C1917] hover:no-underline py-5">
+            <AccordionItem value="matieres" className="border-b border-[#2A2A2A]">
+              <AccordionTrigger className="text-xs font-sans uppercase tracking-widest text-[#F5F0EB] hover:no-underline py-5">
                 {"Matieres"}
               </AccordionTrigger>
               <AccordionContent>
@@ -84,9 +83,9 @@ export function FilterSheet({
                       <Checkbox
                         checked={selectedMatieres.includes(matiere)}
                         onCheckedChange={() => onToggleMatiere(matiere)}
-                        className="size-4 rounded-none border-[#D6D3D1] data-[state=checked]:bg-[#1C1917] data-[state=checked]:border-[#1C1917]"
+                        className="size-4 rounded-none border-[#2A2A2A] data-[state=checked]:bg-[#D4AF37] data-[state=checked]:border-[#D4AF37] data-[state=checked]:text-[#0A0A0A]"
                       />
-                      <span className="text-sm font-sans text-[#57534E] group-hover:text-[#1C1917] transition-colors">
+                      <span className="text-sm font-sans text-[#8A8A8A] group-hover:text-[#F5F0EB] transition-colors">
                         {matiere}
                       </span>
                     </label>
@@ -95,9 +94,8 @@ export function FilterSheet({
               </AccordionContent>
             </AccordionItem>
 
-            {/* Tailles */}
-            <AccordionItem value="tailles" className="border-b border-[#E7E5E4]">
-              <AccordionTrigger className="text-xs font-sans uppercase tracking-widest text-[#1C1917] hover:no-underline py-5">
+            <AccordionItem value="tailles" className="border-b border-[#2A2A2A]">
+              <AccordionTrigger className="text-xs font-sans uppercase tracking-widest text-[#F5F0EB] hover:no-underline py-5">
                 Tailles
               </AccordionTrigger>
               <AccordionContent>
@@ -109,8 +107,8 @@ export function FilterSheet({
                       className={cn(
                         "py-2.5 px-3 text-xs font-sans tracking-wider uppercase border transition-all text-center",
                         selectedTailles.includes(taille)
-                          ? "border-[#1C1917] bg-[#1C1917] text-[#FDFBF7]"
-                          : "border-[#E7E5E4] text-[#57534E] hover:border-[#1C1917] hover:text-[#1C1917]"
+                          ? "border-[#D4AF37] bg-[#D4AF37] text-[#0A0A0A]"
+                          : "border-[#2A2A2A] text-[#8A8A8A] hover:border-[#D4AF37] hover:text-[#F5F0EB]"
                       )}
                     >
                       {taille}
@@ -120,9 +118,8 @@ export function FilterSheet({
               </AccordionContent>
             </AccordionItem>
 
-            {/* Couleurs */}
             <AccordionItem value="couleurs" className="border-b-0">
-              <AccordionTrigger className="text-xs font-sans uppercase tracking-widest text-[#1C1917] hover:no-underline py-5">
+              <AccordionTrigger className="text-xs font-sans uppercase tracking-widest text-[#F5F0EB] hover:no-underline py-5">
                 Couleurs
               </AccordionTrigger>
               <AccordionContent>
@@ -138,12 +135,12 @@ export function FilterSheet({
                         className={cn(
                           "size-8 rounded-full border-2 transition-all",
                           selectedCouleurs.includes(couleur.name)
-                            ? "border-[#1C1917] scale-110"
-                            : "border-transparent group-hover:border-[#D6D3D1]"
+                            ? "border-[#D4AF37] scale-110"
+                            : "border-transparent group-hover:border-[#8A8A8A]"
                         )}
                         style={{ backgroundColor: couleur.hex }}
                       />
-                      <span className="text-[10px] font-sans text-[#78716C] group-hover:text-[#1C1917] transition-colors">
+                      <span className="text-[10px] font-sans text-[#8A8A8A] group-hover:text-[#F5F0EB] transition-colors">
                         {couleur.name}
                       </span>
                     </button>
@@ -154,11 +151,10 @@ export function FilterSheet({
           </Accordion>
         </div>
 
-        {/* Apply button */}
-        <div className="border-t border-[#E7E5E4] pt-5 pb-2">
+        <div className="border-t border-[#2A2A2A] pt-5 pb-2">
           <button
             onClick={() => onOpenChange(false)}
-            className="w-full bg-[#1C1917] text-[#FDFBF7] py-3.5 text-xs font-sans uppercase tracking-widest hover:bg-[#8B4513] transition-colors"
+            className="w-full bg-[#D4AF37] text-[#0A0A0A] py-3.5 text-xs font-sans uppercase tracking-widest font-medium hover:bg-[#C2662D] hover:text-[#F5F0EB] transition-colors"
           >
             Appliquer les filtres
           </button>

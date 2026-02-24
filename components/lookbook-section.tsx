@@ -39,7 +39,6 @@ function LookbookImage({ src, alt, className }: LookbookImageProps) {
         className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-75"
         sizes="(max-width: 768px) 100vw, 50vw"
       />
-      {/* Magnetic button */}
       {hovered && (
         <motion.div
           className="absolute z-10 pointer-events-none"
@@ -49,7 +48,7 @@ function LookbookImage({ src, alt, className }: LookbookImageProps) {
           }}
           transition={{ type: "spring", stiffness: 250, damping: 20 }}
         >
-          <span className="inline-block bg-[#FDFBF7] text-[#1C1917] px-5 py-2.5 text-xs font-sans uppercase tracking-widest rounded-sm whitespace-nowrap">
+          <span className="inline-block bg-[#D4AF37] text-[#0A0A0A] px-5 py-2.5 text-xs font-sans uppercase tracking-widest rounded-sm whitespace-nowrap font-medium">
             Voir le look
           </span>
         </motion.div>
@@ -71,17 +70,16 @@ export function LookbookSection() {
         className="mb-12 md:mb-16"
       >
         <div className="flex items-center gap-6 mb-4">
-          <div className="w-12 h-px bg-[#8B4513]" />
-          <p className="text-xs font-sans uppercase tracking-[0.3em] text-[#8B4513]">
+          <div className="w-12 h-px bg-[#D4AF37]" />
+          <p className="text-xs font-sans uppercase tracking-[0.3em] text-[#D4AF37]">
             Lookbook
           </p>
         </div>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1C1917] tracking-tight" style={{ letterSpacing: "-0.02em" }}>
+        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#F5F0EB] tracking-tight" style={{ letterSpacing: "-0.02em" }}>
           {"L'Art de la Silhouette"}
         </h2>
       </motion.div>
 
-      {/* Asymmetric editorial grid */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -96,7 +94,7 @@ export function LookbookSection() {
         />
         <LookbookImage
           src="/images/lookbook-2.jpg"
-          alt="Ensemble en pagne tissé manjak"
+          alt="Ensemble en pagne tisse manjak"
           className="md:col-span-7"
         />
         <LookbookImage

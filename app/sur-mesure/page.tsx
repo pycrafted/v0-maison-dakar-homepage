@@ -9,11 +9,12 @@ import { ReservationForm } from "@/components/sur-mesure/reservation-form"
 import { Testimonial } from "@/components/sur-mesure/testimonial"
 import { SiteFooter } from "@/components/site-footer"
 import { CartDrawer } from "@/components/cart-drawer"
+import { BottomNav } from "@/components/bottom-nav"
 
 export default function SurMesurePage() {
   return (
     <CartProvider>
-      <div className="min-h-screen bg-[#FDFBF7]">
+      <div className="min-h-screen bg-[#0A0A0A]">
         <AnnouncementBar />
         <SiteHeader />
         <main>
@@ -24,6 +25,7 @@ export default function SurMesurePage() {
         </main>
         <SiteFooter />
         <CartDrawer />
+        <BottomNav />
       </div>
     </CartProvider>
   )

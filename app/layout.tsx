@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'MAISON DAKAR | Haute Couture Senegalaise',
-  description: 'Maison Dakar - Haute couture senegalaise. Bazin riche, pagne tisse manjak et soie. Artisanat et avant-garde depuis Dakar.',
+  title: 'GOLDEN POUSSO | La couture Africaine autrement !',
+  description: 'Golden Pousso - La couture Africaine autrement ! Boubous africains, chaussures, sacs et bijoux. Artisanat et avant-garde depuis Dakar.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#FDFBF7',
+  themeColor: '#0A0A0A',
   width: 'device-width',
   initialScale: 1,
 }

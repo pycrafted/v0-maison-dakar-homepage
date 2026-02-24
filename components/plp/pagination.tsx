@@ -23,15 +23,14 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
       aria-label="Pagination"
       className="flex items-center justify-center gap-1 pt-16 md:pt-20 pb-4"
     >
-      {/* Previous */}
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         className={cn(
           "flex items-center gap-2 px-4 py-2 text-xs font-sans uppercase tracking-widest transition-colors",
           currentPage === 1
-            ? "text-[#D6D3D1] cursor-not-allowed"
-            : "text-[#78716C] hover:text-[#1C1917]"
+            ? "text-[#2A2A2A] cursor-not-allowed"
+            : "text-[#8A8A8A] hover:text-[#D4AF37]"
         )}
         aria-label="Page precedente"
       >
@@ -39,10 +38,8 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         {"Precedent"}
       </button>
 
-      {/* Separator */}
-      <span className="w-8 h-px bg-[#E7E5E4] mx-2" />
+      <span className="w-8 h-px bg-[#2A2A2A] mx-2" />
 
-      {/* Page numbers */}
       {pages.map((page) => (
         <button
           key={page}
@@ -50,8 +47,8 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
           className={cn(
             "relative size-9 flex items-center justify-center text-sm font-sans transition-colors",
             currentPage === page
-              ? "text-[#1C1917]"
-              : "text-[#78716C] hover:text-[#1C1917]"
+              ? "text-[#D4AF37]"
+              : "text-[#8A8A8A] hover:text-[#F5F0EB]"
           )}
           aria-label={`Page ${page}`}
           aria-current={currentPage === page ? "page" : undefined}
@@ -60,25 +57,23 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
           {currentPage === page && (
             <motion.span
               layoutId="page-indicator"
-              className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-px bg-[#1C1917]"
+              className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-px bg-[#D4AF37]"
               transition={{ duration: 0.3 }}
             />
           )}
         </button>
       ))}
 
-      {/* Separator */}
-      <span className="w-8 h-px bg-[#E7E5E4] mx-2" />
+      <span className="w-8 h-px bg-[#2A2A2A] mx-2" />
 
-      {/* Next */}
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         className={cn(
           "flex items-center gap-2 px-4 py-2 text-xs font-sans uppercase tracking-widest transition-colors",
           currentPage === totalPages
-            ? "text-[#D6D3D1] cursor-not-allowed"
-            : "text-[#78716C] hover:text-[#1C1917]"
+            ? "text-[#2A2A2A] cursor-not-allowed"
+            : "text-[#8A8A8A] hover:text-[#D4AF37]"
         )}
         aria-label="Page suivante"
       >

@@ -15,7 +15,7 @@ export function BespokeHero() {
     <section className="relative h-screen w-full overflow-hidden">
       <Image
         src="/images/sur-mesure-hero.jpg"
-        alt="Atelier de haute couture Maison Dakar - Robe en cours de creation"
+        alt="Atelier de haute couture Golden Pousso - Robe en cours de creation"
         fill
         priority
         className="object-cover brightness-[0.45]"

@@ -23,16 +23,13 @@ export function PLPProductCard({ product, index }: PLPProductCardProps) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Image container */}
-      <div className="relative aspect-[3/4] overflow-hidden mb-4 bg-[#F5F0EB]">
-        {/* Badge */}
+      <div className="relative aspect-[3/4] overflow-hidden mb-4 bg-[#1A1A1A]">
         {product.isNew && (
-          <span className="absolute top-3 left-3 z-10 bg-[#FDFBF7] text-[#1C1917] text-[10px] font-sans uppercase tracking-widest px-3 py-1.5 border border-[#E7E5E4]">
+          <span className="absolute top-3 left-3 z-10 bg-[#D4AF37] text-[#0A0A0A] text-[10px] font-sans uppercase tracking-widest px-3 py-1.5 font-medium">
             {"Nouveaute"}
           </span>
         )}
 
-        {/* Primary image */}
         <Image
           src={product.imageA}
           alt={product.name}
@@ -42,19 +39,17 @@ export function PLPProductCard({ product, index }: PLPProductCardProps) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
 
-        {/* Hover overlay */}
         <div
-          className={`absolute inset-0 bg-[#1C1917]/10 transition-opacity duration-500 ${
+          className={`absolute inset-0 bg-[#0A0A0A]/20 transition-opacity duration-500 ${
             hovered ? "opacity-100" : "opacity-0"
           }`}
         />
 
-        {/* Quick View button */}
         <motion.button
           initial={{ opacity: 0, y: 8 }}
           animate={hovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
           transition={{ duration: 0.25 }}
-          className="absolute bottom-4 left-4 right-4 flex items-center justify-center gap-2.5 bg-[#FDFBF7] text-[#1C1917] py-3 text-xs font-sans uppercase tracking-widest hover:bg-[#1C1917] hover:text-[#FDFBF7] transition-colors border border-[#E7E5E4]"
+          className="absolute bottom-4 left-4 right-4 flex items-center justify-center gap-2.5 bg-[#D4AF37] text-[#0A0A0A] py-3 text-xs font-sans uppercase tracking-widest font-medium hover:bg-[#C2662D] hover:text-[#F5F0EB] transition-colors"
           aria-label={`Apercu rapide de ${product.name}`}
         >
           <Eye className="size-3.5" strokeWidth={1.5} />
@@ -62,14 +57,13 @@ export function PLPProductCard({ product, index }: PLPProductCardProps) {
         </motion.button>
       </div>
 
-      {/* Info */}
       <div className="px-0.5">
-        <h3 className="font-serif text-sm md:text-base text-[#1C1917] mb-1.5 leading-snug">
+        <h3 className="font-serif text-sm md:text-base text-[#F5F0EB] mb-1.5 leading-snug">
           {product.name}
         </h3>
-        <p className="text-sm font-sans text-[#1C1917]">
+        <p className="text-sm font-sans text-[#D4AF37]">
           {product.priceCFA.toLocaleString("fr-FR")} FCFA{" "}
-          <span className="text-[#78716C]">| {product.priceEUR} {"\u20AC"}</span>
+          <span className="text-[#8A8A8A]">| {product.priceEUR} {"\u20AC"}</span>
         </p>
       </div>
     </motion.article>

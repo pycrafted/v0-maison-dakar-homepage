@@ -12,6 +12,7 @@ import { Toolbar } from "@/components/plp/toolbar"
 import { FilterSheet } from "@/components/plp/filter-sheet"
 import { PLPProductCard } from "@/components/plp/plp-product-card"
 import { Pagination } from "@/components/plp/pagination"
+import { BottomNav } from "@/components/bottom-nav"
 import { ALL_PRODUCTS } from "@/lib/plp-data"
 
 const ITEMS_PER_PAGE = 9
@@ -109,7 +110,7 @@ export default function PretAPorterPage() {
 
   return (
     <CartProvider>
-      <div className="min-h-screen bg-[#FDFBF7]">
+      <div className="min-h-screen bg-[#0A0A0A]">
         <AnnouncementBar />
         <SiteHeader variant="light" />
         <main>
@@ -212,6 +213,7 @@ export default function PretAPorterPage() {
 
         <SiteFooter />
         <CartDrawer />
+        <BottomNav />
 
         <FilterSheet
           open={filterOpen}

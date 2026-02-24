@@ -19,50 +19,49 @@ interface Product {
 const PRODUCTS: Product[] = [
   {
     id: 1,
-    name: "Robe Sculptée Terracotta",
+    name: "Boubou Terracotta Sculpte",
     description: "Bazin riche, drapé sculptural",
     priceEUR: 185,
     priceCFA: 120000,
     imageA: "/images/product-1a.jpg",
     imageB: "/images/product-1b.jpg",
-    category: "robes",
+    category: "boubous",
   },
   {
     id: 2,
     name: "Ensemble Bazin Indigo",
-    description: "Broderies or, coupe structurée",
+    description: "Broderies or, coupe structuree",
     priceEUR: 245,
     priceCFA: 160000,
     imageA: "/images/product-2a.jpg",
     imageB: "/images/product-2b.jpg",
-    category: "ensembles",
+    category: "boubous",
   },
   {
     id: 3,
     name: "Robe Manjak Ivoire",
-    description: "Soie et pagne tissé, fluide",
+    description: "Soie et pagne tisse, fluide",
     priceEUR: 310,
     priceCFA: 205000,
     imageA: "/images/product-3a.jpg",
     imageB: "/images/product-3b.jpg",
-    category: "robes",
+    category: "boubous",
   },
   {
     id: 4,
-    name: "Tailleur Émeraude",
+    name: "Tailleur Emeraude",
     description: "Bazin riche, tailleur power",
     priceEUR: 275,
     priceCFA: 180000,
     imageA: "/images/product-4a.jpg",
     imageB: "/images/product-4b.jpg",
-    category: "ensembles",
+    category: "boubous",
   },
 ]
 
 const FILTERS = [
-  { label: "Toutes les pièces", value: "all" },
-  { label: "Robes Sculpturales", value: "robes" },
-  { label: "Ensembles Bazin", value: "ensembles" },
+  { label: "Toutes les pieces", value: "all" },
+  { label: "Boubous", value: "boubous" },
 ]
 
 function ProductCard({ product }: { product: Product }) {
@@ -76,8 +75,7 @@ function ProductCard({ product }: { product: Product }) {
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="relative aspect-[3/4] overflow-hidden mb-4 bg-[#F5F0EB] rounded-sm">
-        {/* Primary image */}
+      <div className="relative aspect-[3/4] overflow-hidden mb-4 bg-[#1A1A1A] rounded-sm">
         <Image
           src={product.imageA}
           alt={product.name}
@@ -87,35 +85,33 @@ function ProductCard({ product }: { product: Product }) {
           }`}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
-        {/* Hover image */}
         <Image
           src={product.imageB}
-          alt={`${product.name} - vue arrière`}
+          alt={`${product.name} - vue arriere`}
           fill
           className={`object-cover transition-opacity duration-700 ${
             hovered ? "opacity-100" : "opacity-0"
           }`}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
-        {/* Quick add button */}
         <motion.button
           initial={{ opacity: 0, y: 10 }}
           animate={hovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 0.25 }}
-          className="absolute bottom-4 left-4 right-4 flex items-center justify-center gap-2 bg-[#1C1917] text-[#FDFBF7] py-3 text-xs font-sans uppercase tracking-widest rounded-sm hover:bg-[#8B4513] transition-colors"
+          className="absolute bottom-4 left-4 right-4 flex items-center justify-center gap-2 bg-[#D4AF37] text-[#0A0A0A] py-3 text-xs font-sans uppercase tracking-widest rounded-sm hover:bg-[#C2662D] hover:text-[#F5F0EB] transition-colors font-medium"
           aria-label={`Ajouter ${product.name} au panier`}
         >
           <Plus className="size-3.5" strokeWidth={2} />
           Ajouter
         </motion.button>
       </div>
-      <h3 className="font-sans text-sm font-medium text-[#1C1917] mb-1">
+      <h3 className="font-sans text-sm font-medium text-[#F5F0EB] mb-1">
         {product.name}
       </h3>
-      <p className="text-xs text-[#78716C] mb-2">{product.description}</p>
-      <p className="text-sm text-[#1C1917]">
+      <p className="text-xs text-[#8A8A8A] mb-2">{product.description}</p>
+      <p className="text-sm text-[#D4AF37]">
         {product.priceCFA.toLocaleString("fr-FR")} FCFA{" "}
-        <span className="text-[#78716C]">| {product.priceEUR} €</span>
+        <span className="text-[#8A8A8A]">| {product.priceEUR} {"\u20AC"}</span>
       </p>
     </motion.div>
   )
@@ -144,17 +140,16 @@ export function ProductGrid() {
         className="mb-12 md:mb-16"
       >
         <div className="flex items-center gap-6 mb-4">
-          <div className="w-12 h-px bg-[#8B4513]" />
-          <p className="text-xs font-sans uppercase tracking-[0.3em] text-[#8B4513]">
+          <div className="w-12 h-px bg-[#D4AF37]" />
+          <p className="text-xs font-sans uppercase tracking-[0.3em] text-[#D4AF37]">
             Collection
           </p>
         </div>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1C1917] tracking-tight" style={{ letterSpacing: "-0.02em" }}>
-          Pièces Sélectionnées
+        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#F5F0EB] tracking-tight" style={{ letterSpacing: "-0.02em" }}>
+          {"Pieces Selectionnees"}
         </h2>
       </motion.div>
 
-      {/* Filters */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -167,15 +162,15 @@ export function ProductGrid() {
             onClick={() => setActiveFilter(f.value)}
             className={`relative text-sm font-sans transition-colors pb-1 ${
               activeFilter === f.value
-                ? "text-[#1C1917]"
-                : "text-[#78716C] hover:text-[#1C1917]"
+                ? "text-[#D4AF37]"
+                : "text-[#8A8A8A] hover:text-[#F5F0EB]"
             }`}
           >
             {f.label}
             {activeFilter === f.value && (
               <motion.div
                 layoutId="filter-underline"
-                className="absolute bottom-0 left-0 right-0 h-px bg-[#1C1917]"
+                className="absolute bottom-0 left-0 right-0 h-px bg-[#D4AF37]"
                 transition={{ duration: 0.3 }}
               />
             )}
@@ -183,7 +178,6 @@ export function ProductGrid() {
         ))}
       </motion.div>
 
-      {/* Grid */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}

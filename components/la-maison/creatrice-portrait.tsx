@@ -21,7 +21,7 @@ export function CreateurPortrait() {
           <div className="relative aspect-[3/4.5] w-full overflow-hidden">
             <Image
               src="/images/creatrice-portrait.jpg"
-              alt="Awa Diop, directrice artistique de Maison Dakar"
+              alt="Awa Diop, directrice artistique de Golden Pousso"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -49,7 +49,7 @@ export function CreateurPortrait() {
           <div className="flex flex-col gap-6 text-base md:text-lg text-[#57534E] leading-relaxed max-w-xl">
             <p>
               {
-                "Awa Diop a grandi entre les ateliers de teinture de sa grand-m\u00e8re \u00e0 Ziguinchor et les pages \u00e9corn\u00e9es de Vogue que sa m\u00e8re collectionnait. Cette dualit\u00e9 \u2014 l\u2019artisanat brut et le r\u00eave de la haute couture \u2014 est devenue l\u2019essence m\u00eame de Maison Dakar."
+                "Awa Diop a grandi entre les ateliers de teinture de sa grand-m\u00e8re \u00e0 Ziguinchor et les pages \u00e9corn\u00e9es de Vogue que sa m\u00e8re collectionnait. Cette dualit\u00e9 \u2014 l\u2019artisanat brut et le r\u00eave de la haute couture \u2014 est devenue l\u2019essence m\u00eame de Golden Pousso."
               }
             </p>
             <p>

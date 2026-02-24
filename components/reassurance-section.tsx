@@ -8,7 +8,7 @@ const ITEMS = [
   {
     icon: Truck,
     title: "Livraison DHL Express Mondiale",
-    description: "Expédition sécurisée dans le monde entier",
+    description: "Expedition securisee dans le monde entier",
   },
   {
     icon: RefreshCcw,
@@ -17,13 +17,13 @@ const ITEMS = [
   },
   {
     icon: Shield,
-    title: "Paiement Sécurisé",
+    title: "Paiement Securise",
     description: "Wave, Orange Money, Stripe",
   },
   {
     icon: Headphones,
     title: "Service Client Sur-Mesure",
-    description: "Conseillère dédiée par WhatsApp",
+    description: "Conseillere dediee par WhatsApp",
   },
 ]
 
@@ -32,7 +32,7 @@ export function ReassuranceSection() {
   const isInView = useInView(ref, { once: true, margin: "-50px" })
 
   return (
-    <section ref={ref} className="px-4 md:px-8 py-20 md:py-24 border-y border-[#E7E5E4] bg-[#FDFBF7]">
+    <section ref={ref} className="px-4 md:px-8 py-20 md:py-24 border-y border-[#2A2A2A] bg-[#0A0A0A]">
       <div className="max-w-screen-2xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
           {ITEMS.map((item, i) => (
@@ -44,13 +44,13 @@ export function ReassuranceSection() {
               className="flex flex-col items-center text-center"
             >
               <item.icon
-                className="size-8 text-[#8B4513] mb-4"
+                className="size-8 text-[#D4AF37] mb-4"
                 strokeWidth={1}
               />
-              <h3 className="text-sm font-sans font-medium text-[#1C1917] uppercase tracking-wider mb-2">
+              <h3 className="text-sm font-sans font-medium text-[#F5F0EB] uppercase tracking-wider mb-2">
                 {item.title}
               </h3>
-              <p className="text-xs text-[#78716C] leading-relaxed">
+              <p className="text-xs text-[#8A8A8A] leading-relaxed">
                 {item.description}
               </p>
             </motion.div>

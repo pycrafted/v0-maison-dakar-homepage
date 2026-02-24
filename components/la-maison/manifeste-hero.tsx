@@ -41,7 +41,7 @@ export function ManifesteHero() {
           style={{ textAlignLast: "center" }}
         >
           {
-            "N\u00e9e sous le soleil de Dakar, nourrie par l\u2019effervescence de l\u2019Afrique contemporaine et l\u2019\u00e9l\u00e9gance intemporelle des grandes maisons de couture. Maison Dakar est une lettre d\u2019amour \u00e0 notre h\u00e9ritage. Nous croyons que la vraie beaut\u00e9 na\u00eet de la rencontre entre tradition ancestrale et vision avant-gardiste \u2014 chaque pi\u00e8ce est un pont entre deux mondes."
+            "N\u00e9e sous le soleil de Dakar, nourrie par l\u2019effervescence de l\u2019Afrique contemporaine et l\u2019\u00e9l\u00e9gance intemporelle des grandes maisons de couture. Golden Pousso est une lettre d\u2019amour \u00e0 notre h\u00e9ritage. Nous croyons que la vraie beaut\u00e9 na\u00eet de la rencontre entre tradition ancestrale et vision avant-gardiste \u2014 chaque pi\u00e8ce est un pont entre deux mondes."
           }
         </motion.p>
 
