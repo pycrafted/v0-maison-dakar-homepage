@@ -1,7 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { ArrowRight } from "lucide-react"
+import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 
 const FOOTER_LINKS = {
@@ -13,54 +12,9 @@ const FOOTER_LINKS = {
 export function SiteFooter() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
-  const [email, setEmail] = useState("")
 
   return (
     <footer ref={ref} className="bg-[#0A0A0A] text-[#8A8A8A] border-t border-[#2A2A2A]">
-      {/* Newsletter section */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className="px-4 md:px-8 py-20 md:py-28 border-b border-[#2A2A2A]"
-      >
-        <div className="max-w-2xl text-center mx-auto">
-          <p className="text-xs font-sans uppercase tracking-[0.3em] text-[#D4AF37] mb-6">
-            Newsletter
-          </p>
-          <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#F5F0EB] mb-4 tracking-tight" style={{ letterSpacing: "-0.02em" }}>
-            {"Inscrivez-vous pour un acces exclusif"}
-          </h3>
-          <p className="text-sm text-[#8A8A8A] mb-10 leading-relaxed">
-            {"Recevez en avant-premiere nos nouvelles collections, invitations aux ventes privees et inspirations depuis Dakar."}
-          </p>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault()
-              setEmail("")
-            }}
-            className="relative max-w-md mx-auto"
-          >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Votre adresse email"
-              className="w-full bg-transparent border-b border-[#2A2A2A] pb-3 pr-10 text-base text-[#F5F0EB] placeholder:text-[#8A8A8A]/50 focus:outline-none focus:border-[#D4AF37] transition-colors"
-              required
-              aria-label="Adresse email pour la newsletter"
-            />
-            <button
-              type="submit"
-              className="absolute right-0 bottom-3 text-[#D4AF37] hover:text-[#F5F0EB] transition-colors"
-              aria-label="S'inscrire a la newsletter"
-            >
-              <ArrowRight className="size-5" strokeWidth={1.5} />
-            </button>
-          </form>
-        </div>
-      </motion.div>
-
       {/* Links grid */}
       <div className="px-4 md:px-8 py-16 md:py-20">
         <div className="max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
