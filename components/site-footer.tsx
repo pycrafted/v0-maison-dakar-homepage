@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion"
 
 const FOOTER_LINKS = {
   "La Maison": ["Notre Histoire", "Savoir-Faire", "Atelier Dakar", "Carrieres"],
-  "Service Client": ["Livraison & Retours", "Guide des Tailles", "Entretien", "FAQ"],
+  "Service Client": ["Livraison & Retours", "Guide des Tailles", "Entretien", "FAQ", "Contact"],
   "Legal": ["CGV", "Politique de Confidentialite", "Mentions Legales", "Cookies"],
 }
 
@@ -73,7 +73,7 @@ export function SiteFooter() {
                 {links.map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href={link === "Contact" ? "/contact" : "#"}
                       className="text-sm text-[#8A8A8A] hover:text-[#F5F0EB] transition-colors"
                     >
                       {link}
