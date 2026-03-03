@@ -73,7 +73,11 @@ export function SiteFooter() {
                 {links.map((link) => (
                   <li key={link}>
                     <a
-                      href={link === "Contact" ? "/contact" : "#"}
+                      href={
+                        link === "Contact" ? "/contact"
+                        : link === "Livraison & Retours" ? "/livraison-retours"
+                        : "#"
+                      }
                       className="text-sm text-[#8A8A8A] hover:text-[#F5F0EB] transition-colors"
                     >
                       {link}
