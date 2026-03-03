@@ -10,6 +10,7 @@ import { LookbookSection } from "@/components/lookbook-section"
 import { ProductGrid } from "@/components/product-grid"
 import { SavoirFaireSection } from "@/components/savoir-faire-section"
 import { ReassuranceSection } from "@/components/reassurance-section"
+import { ReviewsSection } from "@/components/reviews-section"
 import { SiteFooter } from "@/components/site-footer"
 import { CartDrawer } from "@/components/cart-drawer"
 import { BottomNav } from "@/components/bottom-nav"
@@ -28,6 +29,7 @@ export default function HomePage() {
           <ProductGrid />
           <SavoirFaireSection />
           <ReassuranceSection />
+          <ReviewsSection />
         </main>
         <SiteFooter />
         <CartDrawer />
